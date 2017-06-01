@@ -25,11 +25,13 @@ public class S2SExample {
 		builder.nodePenalizationPeriod(60, TimeUnit.SECONDS);
 		SiteToSiteClient client = builder.build();
 
-    String content = "Hello, world";
     HashMap<String,String> attributes = new HashMap<String,String>();
-    attributes.put("whoami", "java client");
+    String content = "Record goes here";
     try{
       Transaction transaction = client.createTransaction(TransferDirection.SEND);
+      attributes.put("value", "valid data");
+      transaction.send(new SimplePacket(content, attributes));
+      attributes.put("value", "junk data");
       transaction.send(new SimplePacket(content, attributes));
       transaction.confirm();
       TransactionCompletion completion =  transaction.complete();
