@@ -1,3 +1,5 @@
+The intent of this repository is to provide an example Java project that connects to and sends a FlowFile (record) to an [Apache NiFi](http://nifi.apache.org/) instance over its [Site to Site protocol](http://nifi.apache.org/docs/nifi-docs/html/user-guide.html#site-to-site).
+
 Build:
 ```
 mvn clean package
@@ -24,8 +26,10 @@ In your NiFi Web UI you should see:
 
 ![S2SExample](/screenshots/S2SExample.png?raw=true)
 
-Right click on the queue and "List queue" and you'll be taken to the Provenance view where you can see the details of the record your Java client produced:
+Right click on the queue and "List queue"..
 
 ![S2SExample](/screenshots/S2SExample-list-queue.png?raw=true)
+
+You'll be taken to the Provenance view where you can see the details of the record your Java client produced:
 
 ![S2SExample](/screenshots/S2SExample-provenance.png?raw=true)
