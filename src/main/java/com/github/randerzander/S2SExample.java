@@ -19,7 +19,7 @@ import org.apache.nifi.remote.protocol.DataPacket;
 public class S2SExample {
   public static void main(String[] args){
     SiteToSiteClient.Builder builder = new SiteToSiteClient.Builder();
-		builder.url("http://localhost:1026/nifi");
+		builder.url("http://localhost:8080/nifi");
 		builder.portName("source1");
     builder.transportProtocol(SiteToSiteTransportProtocol.HTTP);
 		builder.nodePenalizationPeriod(60, TimeUnit.SECONDS);
